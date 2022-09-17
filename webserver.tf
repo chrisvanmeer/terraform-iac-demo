@@ -11,10 +11,3 @@ resource "aws_instance" "web_server" {
 output "webserver01_public_ip" {
   value = aws_instance.web_server.public_ip
 }
-
-
-
-
-
-
-
