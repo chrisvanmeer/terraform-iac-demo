@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "4.28.0"
+      version = "4.40.0"
     }
   }
 }
@@ -21,10 +21,10 @@ resource "aws_key_pair" "key" {
 }
 
 resource "aws_instance" "aws_web_server" {
-  ami           = "ami-065deacbcaac64cf2" # Ubuntu Jammy
+  ami           = "ami-065deacbcaac64cf2"
   instance_type = "t2.micro"
   key_name      = aws_key_pair.key.key_name
-  user_data     = templatefile("../scripts/install.sh", { hostname = "webserver01" })
+  user_data     = templatefile("../scripts/install.sh", { hostname = "webserver01", provider = "AWS" })
   tags = {
     Name = "webserver01"
   }

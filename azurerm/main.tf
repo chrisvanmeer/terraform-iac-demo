@@ -25,7 +25,7 @@ data "cloudinit_config" "config" {
   part {
     content_type = "text/x-shellscript"
     filename     = "install.sh"
-    content      = templatefile("../scripts/install.sh", { hostname = "webserver02" })
+    content      = templatefile("../scripts/install.sh", { hostname = "webserver02", provider = "Azure" })
   }
 }
 
@@ -116,9 +116,9 @@ resource "azurerm_linux_virtual_machine" "azure_web_server" {
   ]
 
   source_image_reference {
-    offer     = "0001-com-ubuntu-server-focal"
+    offer     = "0001-com-ubuntu-server-jammy"
     publisher = "Canonical"
-    sku       = "20_04-lts-gen2"
+    sku       = "22_04-lts-gen2"
     version   = "latest"
   }
 

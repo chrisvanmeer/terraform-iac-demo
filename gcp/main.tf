@@ -21,7 +21,7 @@ data "cloudinit_config" "config" {
   part {
     content_type = "text/x-shellscript"
     filename     = "install.sh"
-    content      = templatefile("../scripts/install.sh", { hostname = "webserver03" })
+    content      = templatefile("../scripts/install.sh", { hostname = "webserver03", provider = "GCP" })
   }
 }
 
