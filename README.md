@@ -1,6 +1,6 @@
 # Terraform Infrastructure as Code Demo
 
-This repository is used for demo purposes to quickly showcase the provisioning of a cloud-based virtual machine running a `nginx` webserver on it, all done with a few lines of Terraform code. Included are examples for the three major cloud providers with guided instructions.
+This repository is used for demo purposes to quickly showcase the provisioning of a cloud-based virtual machine running a `nginx` webserver on Ubuntu Jammy, all done with Terraform. Included are examples for the three major cloud providers with instructions included on this page.
 
 ## Basic instructions
 
