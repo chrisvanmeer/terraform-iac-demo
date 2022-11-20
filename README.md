@@ -29,20 +29,28 @@ terraform destroy
 
 ### AWS
 
-Please make sure you have your AWS credentials set as environment variables.  
-See [this document](https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/guide_credentials_environment.html) for more instructions on how to do that.
+Please make sure you are authorized to AWS before continuing.
+An easy way to get setup is by using the [AWS CLI tools](https://aws.amazon.com/cli/)
+Run the `aws configure` command after installation.
+  
+See [this](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html) link for more documentation.
   
 Change the `region` attribute in `main.tf` to match your region of choice.
 
 ### Azurerm
 
 Please make sure you are authorized to Azure before rolling out the infrastructure.  
-An easy way to get setup is by using the [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli).  
+An easy way to get setup is by using the [Azure CLI tools](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli).  
 Run the `az login` command after installation.
+  
+See [this](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli) link for more documentation.
 
 ### GCP
 
-The easiest way to authenticate against Google Cloud is through their [CLI toolkit](https://cloud.google.com/sdk/docs/install).  
+Please make sure you are authorized to AWS before continuing.
+An easy way to get setup is by using th [GCP CLI tools](https://cloud.google.com/sdk/docs/install).  
 Run the `gcloud auth login` command after installation.  
+  
+See [this](https://cloud.google.com/sdk/gcloud/reference/auth) link for more documentation.
   
 Change the `project` attribute in `main.tf` to represent your own project.
