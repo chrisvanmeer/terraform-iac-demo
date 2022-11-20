@@ -25,9 +25,7 @@ terraform apply
 terraform destroy
 ```
 
-## Instructions per provider
-
-### AWS
+## AWS Instructions
 
 Please make sure you are authorized to AWS before continuing.
 An easy way to get setup is by using the [AWS CLI tools](https://aws.amazon.com/cli/)
@@ -37,7 +35,7 @@ See [this](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quicks
   
 Change the `region` attribute in `main.tf` to match your region of choice.
 
-### Azurerm
+## Azurerm Instructions
 
 Please make sure you are authorized to Azure before rolling out the infrastructure.  
 An easy way to get setup is by using the [Azure CLI tools](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli).  
@@ -45,7 +43,7 @@ Run the `az login` command after installation.
   
 See [this](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli) link for more documentation.
 
-### GCP
+## GCP Instructions
 
 Please make sure you are authorized to AWS before continuing.
 An easy way to get setup is by using th [GCP CLI tools](https://cloud.google.com/sdk/docs/install).  
