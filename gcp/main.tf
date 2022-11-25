@@ -17,14 +17,6 @@ locals {
   tag              = ["iac-demo"]
 }
 
-data "cloudinit_config" "config" {
-  part {
-    content_type = "text/x-shellscript"
-    filename     = "install.sh"
-    content      = templatefile("../scripts/install.sh", { hostname = "webserver03", provider = "GCP" })
-  }
-}
-
 resource "google_compute_instance" "gcp_web_server" {
   name         = "webserver03"
   machine_type = "e2-micro"
@@ -46,7 +38,7 @@ resource "google_compute_instance" "gcp_web_server" {
     ssh-keys = "${local.admin_username}:${file(local.ssh_pub_key_file)}"
   }
 
-  metadata_startup_script = file("install.sh")
+  metadata_startup_script = templatefile("../scripts/install.sh", { hostname = "webserver03", provider = "GCP"})
 }
 
 resource "google_compute_firewall" "iac-demo" {
