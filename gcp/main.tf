@@ -38,7 +38,7 @@ resource "google_compute_instance" "gcp_web_server" {
     ssh-keys = "${local.admin_username}:${file(local.ssh_pub_key_file)}"
   }
 
-  metadata_startup_script = templatefile("../scripts/install.sh", { hostname = "webserver03", provider = "GCP"})
+  metadata_startup_script = templatefile("../scripts/install.sh", { hostname = "webserver03", provider = "GCP" })
 }
 
 resource "google_compute_firewall" "iac-demo" {
@@ -54,7 +54,7 @@ resource "google_compute_firewall" "iac-demo" {
   target_tags   = local.tag
 }
 
-output "azure_webserver03_public_ip" {
+output "google_webserver03_public_ip" {
   value = <<GCP
   The GCP webserver has been deployed.
   SSH details: ${local.admin_username}@${google_compute_instance.gcp_web_server.network_interface.0.access_config.0.nat_ip}
